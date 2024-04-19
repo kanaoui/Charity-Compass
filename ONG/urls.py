@@ -19,7 +19,7 @@ from django.urls import path,include
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
-    path('admin/test', admin.site.urls),
+    path('admin/', admin.site.urls),
     path("__debug__/", include("debug_toolbar.urls")),
     path('campagne/', include('campagne.urls')),
 ]
