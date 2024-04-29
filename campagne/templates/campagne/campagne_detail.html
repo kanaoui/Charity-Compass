@@ -3,11 +3,11 @@
 {% block content %}
 <div class="campagne-detail">
     <div class="campagne">
-        <h2>{{ campagne.charity_number }}</h2>
-        <p>{{ campagne.nom }}</p>
+        <img src="{{ campagne.thumbnail.url}}">
+        <h2>{{ campagne.nom }}</h2>
+        <p>{{ campagne.charity_number }}</p>
         <p>{{ campagne.histoire }}</p>
         <p>{{ campagne.montant }}</p>
-        <p>{{ campagne.histoire }}</p>
         <p>{{ campagne.supporteurs }}</p>
     </div>
 </div>

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <div class="create-campagne">
+        <h2>Create an Awesome New Campagne</h2>
+        <br>
+        <form class="site-form" action="{% url 'campagne:create' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Create">
+        </form>
+    </div>
+{% endblock %}

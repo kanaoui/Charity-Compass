@@ -9,7 +9,23 @@
     </head>
     <body>
         <header class="wrapper">
-            <h1>TEST</h1>
+            <h1><a href="{% url 'home' %}">WARM HEARTS</a></h1>
+            <nav>
+                <ul>
+                    {% if user.is_authenticated %}
+                    <li>
+                        <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit">Log Out</button>
+                        </form>
+                    </li>
+                    <li><a href="{% url 'campagne:create' %}" class="highlight">New Campagne</a></li>
+                    {% else %}
+                        <li><a href="{% url 'accounts:login' %}">Login</a></li>
+                        <li><a href="{% url 'accounts:signup' %}">Signup</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
         </header>
         <div class="wrapper">
             {% block content %}
