@@ -9,7 +9,7 @@
     </head>
     <body>
         <header class="wrapper">
-            <h1><a href="{% url 'home' %}">WARM HEARTS</a></h1>
+            <h1><a href="{% url 'home' %}"><img src="{% static 'logo.svg' %}" alt="Charity compass" /></a></h1>
             <nav>
                 <ul>
                     {% if user.is_authenticated %}
