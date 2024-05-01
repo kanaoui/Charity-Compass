@@ -8,7 +8,7 @@
                 <h2><a href="{% url 'campagne:detail' slug=campagne.slug %}">{{ campagne.nom }}</a></h2>
                 <p>{{ campagne.charity_number }}</p>
                 <p>{{ campagne.snippet }}</p>
-                
+                <p class="fundraiser">Created by {{ campagne.fundraiser.username }}</p>
             </div>
         {% endfor %}
     </div>
