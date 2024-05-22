@@ -45,6 +45,13 @@ nav li{
     margin-left: 20px;
 }
 
+button{
+    background: none;
+    color: #fff;
+    cursor: pointer;
+    border: 0;
+    font-size: 16px;
+}
 nav button{
     background: none;
     color: #fff;
@@ -64,19 +71,20 @@ nav button{
     border: 1px solid #00dba0;
     position: relative;
     padding-bottom: 40px;
+    text-align: center;
 }
 
 .campagne h2{
     font-size: 1.2em;
 }
 
-.campagne .fundraiser{
+.campagne .donate, .campagne .fundraiser{
     padding: 10px;
     background: #00dba0;
     position: absolute;
     right: 0;
     bottom: 0;
-    margin: 0;
+    margin-bottom: 0;
     color: #0f121f;
 }
 
@@ -85,6 +93,7 @@ nav button{
 }
 
 .campagne-detail  .campagne img{
+    margin-top: 10px;
     max-width: 100%;
 }
 

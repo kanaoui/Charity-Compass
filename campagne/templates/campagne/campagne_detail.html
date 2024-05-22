@@ -9,7 +9,9 @@
         <p>{{ campagne.histoire }}</p>
         <p>{{ campagne.montant }}</p>
         <p>{{ campagne.supporteurs }}</p>
-        <p class="fundraiser">Created by {{ campagne.fundraiser.username }}</p>
+        <form method="POST">
+            <button type="submit" class="donate"><a href="https://buy.stripe.com/test_14k5nv89M03xamAcMM">Donate</a></button>
+        </form>
     </div>
 </div>
 {% endblock %}

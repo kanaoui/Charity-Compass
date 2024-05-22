@@ -16,16 +16,19 @@
                     <li>
                         <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
                             {% csrf_token %}
-                            <button type="submit">Log Out</button>
+                            <button class="btn" type="submit">Log Out</button>
                         </form>
                     </li>
                     <li><a href="{% url 'campagne:create' %}" class="highlight">New Campagne</a></li>
                     {% else %}
-                        <li><a href="{% url 'accounts:login' %}">Login</a></li>
-                        <li><a href="{% url 'accounts:signup' %}">Signup</a></li>
+                        <li><a class="btn" href="{% url 'accounts:login' %}">Login</a></li>
+                        <li><a class="btn" href="{% url 'accounts:signup' %}">Signup</a></li>
                     {% endif %}
                 </ul>
             </nav>
+            {% if user.is_authenticated %}
+                <h3 style="text-align: center; color: #00dba0;">Bienvenue, {{user.username}}</h3>
+            {% endif %}
         </header>
         <div class="wrapper">
             {% block content %}
