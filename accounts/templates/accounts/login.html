@@ -1,13 +1,39 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Login</h1>
-    <form class="site-form" action="{% url 'accounts:login' %}" method="post">
-        {% csrf_token %}
-        {{ form }}
-        {% if request.GET.next %}
-            <input type="hidden" name="next" value="{{ request.GET.next }}">
-        {% endif %}
-        <input type="submit" value="Log In">
-    </form>
+    <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2>Login</h2>
+                </div>
+                <div class="col-12">
+                    <a href="">Home</a>
+                    <a href="">Service</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+
+    </div>
+    <div class="contact">
+        <div class="container">
+            <div class="contact-form">
+                <form id="contact-form" class="site-form" action="{% url 'accounts:login' %}" method="post">
+                    {% csrf_token %}
+                    {{ form }}
+                    {% if request.GET.next %}
+                    <div class="control-group">
+                        <input type="hidden" name="next" value="{{ request.GET.next }}">
+                    </div>
+                    <div class="control-group">
+                    </div>
+                    {% endif %}
+                    <input type="submit" value="Log In">
+                </form>
+            </div>
+        </div>
+    </div>
+    
 {% endblock %}

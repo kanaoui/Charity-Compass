@@ -5,3 +5,6 @@ def homepage(request):
 
 def about(request):
     return render(request, 'about.html')
+
+def causes(request):
+    return render(request,'campagne/campagne_list.html')

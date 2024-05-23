@@ -3,6 +3,7 @@ from .models import Campagne
 from django.contrib.auth.decorators import login_required
 from . import forms
 
+
 # Create your views here.
 def campagne_list(request):
     campagnes = Campagne.objects.all()
@@ -25,3 +26,4 @@ def article_create(request):
     else:
         form = forms.CreateCampagne()
     return render(request,'campagne/campagne_create.html', {'form': form})
+
