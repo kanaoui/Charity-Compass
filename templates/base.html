@@ -73,9 +73,8 @@
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu">
-                                <a href="single.html" class="dropdown-item">Detail Page</a>
-                                <a href="service.html" class="dropdown-item">What We Do</a>
-                                <a href="team.html" class="dropdown-item">Meet The Team</a>
+                                <a href="{% url 'about' %}" class="dropdown-item">Detail Page</a>
+                                <a href="{% url 'campagne:campagne_list' %}" class="dropdown-item">What We Do</a>
                                 <a href= "{% url 'campagne:campagne_list' %}" class="dropdown-item">Donate Now</a>
                             </div>
                         </div>
@@ -104,7 +103,7 @@
                     <div class="col-lg-3 col-md-6">
                         <div class="footer-contact">
                             <h2>Our Head Office</h2>
-                            <p><i class="fa fa-map-marker-alt"></i>123 Street, New York, USA</p>
+                            <p><i class="fa fa-map-marker-alt"></i>123 Street, Somewhere, Someplace</p>
                             <p><i class="fa fa-phone-alt"></i>+012 345 67890</p>
                             <p><i class="fa fa-envelope"></i>info@example.com</p>
                             <div class="footer-social">
@@ -119,10 +118,9 @@
                     <div class="col-lg-3 col-md-6">
                         <div class="footer-link">
                             <h2>Popular Links</h2>
-                            <a href="">About Us</a>
-                            <a href="">Contact Us</a>
-                            <a href="">Popular Causes</a>
-                            <a href="">Upcoming Events</a>
+                            <a href="{% url 'about' %}">About Us</a>
+                            <a href="{% url 'home' %}">Contact Us</a>
+                            <a href="{% url 'campagne:campagne_list' %}">Popular Causes</a>
                             <a href="">Latest Blog</a>
                         </div>
                     </div>
@@ -151,10 +149,9 @@
             <div class="container copyright">
                 <div class="row">
                     <div class="col-md-6">
-                        <p>&copy; <a href="#">Your Site Name</a>, All Right Reserved.</p>
+                        <p>&copy; <a href="#">Charity Compass</a>, All Right Reserved.</p>
                     </div>
                     <div class="col-md-6">
-                        <p>Designed By <a href="https://htmlcodex.com">HTML Codex</a></p>
                     </div>
                 </div>
             </div>

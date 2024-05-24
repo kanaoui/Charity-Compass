@@ -1,69 +1,92 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <!-- Page Header Start -->
-    <div class="page-header">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h2>Causes</h2>
-                </div>
-                <div class="col-12">
-                    <a href="">Home</a>
-                    <a href="">Causes</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Page Header End -->
-
-    <!-- Donate Start -->
+<!-- Page Header Start -->
+<div class="page-header">
     <div class="container">
-        <div class="donate" data-parallax="scroll" data-image-src="{{ MEDIA_URL }}../static/img/donate.jpg">
-            <div class="row align-items-center">
-                <div class="col-lg-7">
-                    <div class="donate-content">
-                        <div class="section-header">
-                            <p>Donate Now</p>
-                            <h2>Let's donate to needy people for better lives</h2>
-                        </div>
-                        <div class="donate-text">
-                            <p>
-                                Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non. Aliquam metus tortor, auctor id gravida, viverra quis sem. Curabitur non nisl nec nisi maximus. Aenean convallis porttitor. Aliquam interdum at lacus non blandit.
-                            </p>
-                        </div>
+        <div class="row">
+            <div class="col-12">
+                <h2>Donate</h2>
+            </div>
+            <div class="col-12">
+                <a href="{% url 'home' %}">Home</a>
+                <a href="{% url 'campagne:campagne_list' %}">Causes</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+
+<!-- Donate Start -->
+<div class="container">
+    <div class="donate" data-parallax="scroll" data-image-src="{{ MEDIA_URL }}../static/img/donate.jpg">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <div class="donate-content">
+                    <div class="section-header">
+                        <p>Donate Now</p>
+                        <h2>Let's donate to needy people for better lives</h2>
+                    </div>
+                    <div class="donate-text">
                     </div>
                 </div>
-                <div class="col-lg-5">
-                    <div class="donate-form">
-                        <form>
-                            <div class="control-group">
-                                <input type="text" class="form-control" placeholder="Name" required="required" />
-                            </div>
-                            <div class="control-group">
-                                <input type="email" class="form-control" placeholder="Email" required="required" />
-                            </div>
-                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                <label class="btn btn-custom active">
-                                    <input type="radio" name="options" checked> $10
-                                </label>
-                                <label class="btn btn-custom">
-                                    <input type="radio" name="options"> $20
-                                </label>
-                                <label class="btn btn-custom">
-                                    <input type="radio" name="options"> $30
-                                </label>
-                            </div>
-                            <div>
-                                <button class="btn btn-custom" type="submit">Donate Now</button>
-                            </div>
-                        </form>
-                    </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="donate-form">
+                    <form id="donationForm" method="POST">
+                        {% csrf_token %}
+                        <div class="control-group">
+                            <input type="email" class="form-control" placeholder="Email" required="required" />
+                        </div>
+                        <div class="slider-container">
+                            <input type="range" min="0" max="7" value="0" class="slider" id="donationSlider">
+                            <p>Donation Amount: <span id="donationAmount">$5</span></p>
+                            <input type="hidden" name="donation_amount" id="donationAmountInput" value="5">
+                        </div>
+
+                        <button class="btn btn-custom" type="submit">Donate Now</button>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Donate End -->
+</div>
+<!-- Donate End -->
 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const slider = document.getElementById('donationSlider');
+        const donationAmount = document.getElementById('donationAmount');
+        const donationAmountInput = document.getElementById('donationAmountInput');
+        const donationForm = document.getElementById('donationForm');
+
+        const amounts = [5, 10, 20, 30, 50, 100, 200, 500];
+
+        const links = {
+            5: 'https://buy.stripe.com/test_00gcPX2Ps03x8es289',
+            10: 'https://buy.stripe.com/test_cN217fgGi03xcuI6oq',
+            20: 'https://buy.stripe.com/test_7sI03b75I9E7eCQdQT',
+            30: 'https://buy.stripe.com/test_bIYg29blY8A33Yc6os',
+            50: 'https://buy.stripe.com/test_14k5nv89M03xamAcMM',
+            100: 'https://buy.stripe.com/test_eVa4jr0Hk3fJ2U8bIN',
+            200: 'https://buy.stripe.com/test_aEUaHP89M8A3gKY4gm',
+            500: 'https://buy.stripe.com/test_dR6dU161E3fJdyMdQX'
+        };
+
+        slider.oninput = function() {
+            const selectedAmount = amounts[this.value];
+            donationAmount.textContent = `$${selectedAmount}`;
+            donationAmountInput.value = selectedAmount;
+            donationForm.action = links[selectedAmount];
+        };
+
+        donationForm.onsubmit = function(event) {
+            event.preventDefault();
+            const selectedLink = donationForm.action;
+            console.log("Redirecting to: ", selectedLink);  // Add this line to debug
+            window.location.href = selectedLink;
+        };
+    });
+</script>
 
 {% endblock %}

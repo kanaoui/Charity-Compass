@@ -10,8 +10,8 @@
                       <h2>Causes</h2>
                   </div>
                   <div class="col-12">
-                      <a href="">Home</a>
-                      <a href="">Causes</a>
+                      <a href="{% url 'home' %}">Home</a>
+                      <a href="{% url 'campagne:campagne_list' %}">Causes</a>
                   </div>
               </div>
           </div>
@@ -20,84 +20,83 @@
       
       
       <!-- Service Start -->
-      <div class="service">
-          <div class="container">
-              <div class="section-header text-center">
-                  <p>What We Do?</p>
-                  <h2>We believe that we can save more lives with you</h2>
+    <div class="service">
+      <div class="container">
+          <div class="section-header text-center">
+              <p>What We Do?</p>
+              <h2>We believe that we can save more lives with you</h2>
+          </div>
+          <div class="row">
+              <div class="col-lg-4 col-md-6">
+                  <div class="service-item">
+                      <div class="service-icon">
+                          <i class="flaticon-diet"></i>
+                      </div>
+                      <div class="service-text">
+                          <h3>Healthy Food</h3>
+                          <p>For those who struggle to find their daily meals, we help stave off starvation.</p>
+                      </div>
+                  </div>
               </div>
-              <div class="row">
-                  <div class="col-lg-4 col-md-6">
-                      <div class="service-item">
-                          <div class="service-icon">
-                              <i class="flaticon-diet"></i>
-                          </div>
-                          <div class="service-text">
-                              <h3>Healthy Food</h3>
-                              <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
-                          </div>
+              <div class="col-lg-4 col-md-6">
+                  <div class="service-item">
+                      <div class="service-icon">
+                          <i class="flaticon-water"></i>
+                      </div>
+                      <div class="service-text">
+                          <h3>Pure Water</h3>
+                          <p>For those who do not have ready access to clean water, we fight thirst.</p>
                       </div>
                   </div>
-                  <div class="col-lg-4 col-md-6">
-                      <div class="service-item">
-                          <div class="service-icon">
-                              <i class="flaticon-water"></i>
-                          </div>
-                          <div class="service-text">
-                              <h3>Pure Water</h3>
-                              <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
-                          </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                  <div class="service-item">
+                      <div class="service-icon">
+                          <i class="flaticon-healthcare"></i>
+                      </div>
+                      <div class="service-text">
+                          <h3>Health Care</h3>
+                          <p>For those who cannot maintain their health, we offer medicine.</p>
                       </div>
                   </div>
-                  <div class="col-lg-4 col-md-6">
-                      <div class="service-item">
-                          <div class="service-icon">
-                              <i class="flaticon-healthcare"></i>
-                          </div>
-                          <div class="service-text">
-                              <h3>Health Care</h3>
-                              <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
-                          </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                  <div class="service-item">
+                      <div class="service-icon">
+                          <i class="flaticon-education"></i>
+                      </div>
+                      <div class="service-text">
+                          <h3>Primary Education</h3>
+                          <p>For those who suffer from illeteracy, we pass on the light of knowledge.</p>
                       </div>
                   </div>
-                  <div class="col-lg-4 col-md-6">
-                      <div class="service-item">
-                          <div class="service-icon">
-                              <i class="flaticon-education"></i>
-                          </div>
-                          <div class="service-text">
-                              <h3>Primary Education</h3>
-                              <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
-                          </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                  <div class="service-item">
+                      <div class="service-icon">
+                          <i class="flaticon-home"></i>
+                      </div>
+                      <div class="service-text">
+                          <h3>Residence Facilities</h3>
+                          <p>For those without a home, we give a place to sleep.</p>
                       </div>
                   </div>
-                  <div class="col-lg-4 col-md-6">
-                      <div class="service-item">
-                          <div class="service-icon">
-                              <i class="flaticon-home"></i>
-                          </div>
-                          <div class="service-text">
-                              <h3>Residence Facilities</h3>
-                              <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
-                          </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                  <div class="service-item">
+                      <div class="service-icon">
+                          <i class="flaticon-social-care"></i>
                       </div>
-                  </div>
-                  <div class="col-lg-4 col-md-6">
-                      <div class="service-item">
-                          <div class="service-icon">
-                              <i class="flaticon-social-care"></i>
-                          </div>
-                          <div class="service-text">
-                              <h3>Social Care</h3>
-                              <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
-                          </div>
+                      <div class="service-text">
+                          <h3>Social Care</h3>
+                          <p>For those who cannot stand on their feet, we provide a shoulder to lean on.</p>
                       </div>
                   </div>
               </div>
           </div>
       </div>
-      <!-- Service End -->
-      
+  </div>
+  <!-- Service End -->
 
       <!-- Causes Start -->
       <div class="causes">
@@ -126,13 +125,12 @@
                         <p class="ellipsis">{{ campagne.histoire }}</p>
                     </div>
                     <div class="causes-btn">
-                        <a class="btn btn-custom">Learn More</a>
-                        <a class="btn btn-custom">Donate Now</a>
+                        <a href = "{% url 'campagne:detail' slug=campagne.slug %}"class="btn btn-custom">Learn More</a>
+                        <a href = "{% url 'donate:ddonate' slug=campagne.slug %}"class="btn btn-custom">Donate Now</a>
                     </div>
                   </div>
                   {% endfor %}
               </div>
       </div>
       <!-- Causes End -->
-
 {% endblock %}

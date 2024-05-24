@@ -12,8 +12,8 @@
                 <h2>About Us</h2>
             </div>
             <div class="col-12">
-                <a href="">Home</a>
-                <a href="">About Us</a>
+                <a href="{% url 'home' %}">Home</a>
+                <a href="{% url 'campagne:campagne_list' %}">About Us</a>
             </div>
         </div>
     </div>
@@ -31,7 +31,7 @@
             <div class="col-lg-6">
                 <div class="section-header">
                     <p>Learn About Us</p>
-                    <h2>Worldwide non-profit charity organization</h2>
+                    <h2>Worldwide non-profit charity coordination</h2>
                 </div>
                 <div class="about-tab">
                     <ul class="nav nav-pills nav-justified">
@@ -48,13 +48,13 @@
 
                     <div class="tab-content">
                         <div id="tab-content-1" class="container tab-pane active">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae pellentesque turpis. Donec in hendrerit dui, vel blandit massa. Ut vestibulum suscipit cursus. Cras quis porta nulla, ut placerat risus. Aliquam nec magna eget velit luctus dictum. Phasellus et felis sed purus tristique dignissim. Morbi sit amet leo at purus accumsan pellentesque. Vivamus fermentum nisi vel dapibus blandit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Charity compass is a non-profit website conceptualised and developed for the sake of the needy. Starting off as a university project in Morocco, Charity Compass made its way into the hearts of donors all around the world by providing ease of use, security and efficacy to the world of benevolence. We rallied people all around the globe for one purpose: To help. 
                         </div>
                         <div id="tab-content-2" class="container tab-pane fade">
-                            Sed tincidunt, magna ut vehicula volutpat, turpis diam condimentum justo, posuere congue turpis massa in mi. Proin ornare at massa at fermentum. Nunc aliquet sed nisi iaculis ornare. Nam semper tortor eget est egestas, eu sagittis nunc sodales. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent bibendum sapien sed purus molestie malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            At charity compass, we aspire to bring about the change we want to see in the world. We guide kind hands all around the world towards the betterment of the globe, through communication and collaboration. We hope to alleviate the suffering of the needy and give purpose to those in search for it. We make helping an easy task by locating, guiding and informing about the different crises in the world; Join us now, every little bit counts! Make the world a better place in your own way.
                         </div>
                         <div id="tab-content-3" class="container tab-pane fade">
-                            Aliquam dolor odio, mollis sed feugiat sit amet, feugiat ut sapien. Nunc eu dignissim lorem. Suspendisse at hendrerit enim. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed condimentum semper turpis vel facilisis. Nunc vel faucibus orci. Mauris ut mauris rhoncus, efficitur nisi at, venenatis quam. Praesent egestas pretium enim sit amet finibus. Curabitur at erat molestie, tincidunt lorem eget, consequat ligula.
+                            With Charity Compass, we hope to lead by example. The world doesn't need to be a dark place, so we'll be the first torch of many. We will lead the way to help those in need, and rally those that can help. Together, with volunteers, donators, and developers alike, we will make our world a place of betterment and cooperation, bringing about the good in people and shining light on the matters that need to be adressed most.
                         </div>
                     </div>
                 </div>
@@ -83,7 +83,7 @@
                     <i class="flaticon-charity"></i>
                     <div class="facts-text">
                         <h3 class="facts-plus" data-toggle="counter-up">400</h3>
-                        <p>Volunteers</p>
+                        <p>Helpers</p>
                     </div>
                 </div>
             </div>
@@ -91,8 +91,8 @@
                 <div class="facts-item">
                     <i class="flaticon-kindness"></i>
                     <div class="facts-text">
-                        <h3 class="facts-dollar" data-toggle="counter-up">10000</h3>
-                        <p>Our Goal</p>
+                        <h3 class="facts-plus" data-toggle="counter-up">10000</h3>
+                        <p>Donors</p>
                     </div>
                 </div>
             </div>
@@ -100,7 +100,7 @@
                 <div class="facts-item">
                     <i class="flaticon-donation"></i>
                     <div class="facts-text">
-                        <h3 class="facts-dollar" data-toggle="counter-up">5000</h3>
+                        <h3 class="facts-dollar" data-toggle="counter-up">55000</h3>
                         <p>Raised</p>
                     </div>
                 </div>
@@ -205,13 +205,13 @@
                 <div class="testimonial-profile">
                     <img src="{{ MEDIA_URL }}../static/img/testimonial-1.jpg" alt="Image">
                     <div class="testimonial-name">
-                        <h3>Person Name</h3>
-                        <p>Profession</p>
+                        <h3>John Kennedy DOE</h3>
+                        <p>Architect</p>
                     </div>
                 </div>
                 <div class="testimonial-text">
                     <p>
-                        Lorem ipsum dolor sit amet elit. Phasel preti mi facilis ornare velit non vulputa. Aliqu metus tortor, auctor id gravid vivera quis
+                        Charity Compass is changing lives! It is a platform for all to be good.
                     </p>
                 </div>
             </div>
@@ -219,13 +219,13 @@
                 <div class="testimonial-profile">
                     <img src="{{ MEDIA_URL }}../static/img/testimonial-2.jpg" alt="Image">
                     <div class="testimonial-name">
-                        <h3>Person Name</h3>
-                        <p>Profession</p>
+                        <h3>Jane Curie DOE</h3>
+                        <p>Professor</p>
                     </div>
                 </div>
                 <div class="testimonial-text">
                     <p>
-                        Lorem ipsum dolor sit amet elit. Phasel preti mi facilis ornare velit non vulputa. Aliqu metus tortor, auctor id gravid vivera quis
+                        I don't regret discovering this website, the satisfaction of helping others is immeasurable.
                     </p>
                 </div>
             </div>
@@ -233,13 +233,13 @@
                 <div class="testimonial-profile">
                     <img src="{{ MEDIA_URL }}../static/img/testimonial-3.jpg" alt="Image">
                     <div class="testimonial-name">
-                        <h3>Person Name</h3>
-                        <p>Profession</p>
+                        <h3>John Bush DOE</h3>
+                        <p>Pilot</p>
                     </div>
                 </div>
                 <div class="testimonial-text">
                     <p>
-                        Lorem ipsum dolor sit amet elit. Phasel preti mi facilis ornare velit non vulputa. Aliqu metus tortor, auctor id gravid vivera quis
+                        I donate every month, Charity Compass is saving lives!
                     </p>
                 </div>
             </div>
@@ -247,13 +247,13 @@
                 <div class="testimonial-profile">
                     <img src="{{ MEDIA_URL }}../static/img/testimonial-4.jpg" alt="Image">
                     <div class="testimonial-name">
-                        <h3>Person Name</h3>
-                        <p>Profession</p>
+                        <h3>Jane Marie DOE</h3>
+                        <p>Influencer</p>
                     </div>
                 </div>
                 <div class="testimonial-text">
                     <p>
-                        Lorem ipsum dolor sit amet elit. Phasel preti mi facilis ornare velit non vulputa. Aliqu metus tortor, auctor id gravid vivera quis
+                        I love how you can meet people just by using this site, neat!
                     </p>
                 </div>
             </div>

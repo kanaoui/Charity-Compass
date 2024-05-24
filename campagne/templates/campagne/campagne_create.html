@@ -2,16 +2,34 @@
 
 {% load bootstrap4 %}
 {% block content %}
-    <div class="create-campagne">
-        <h2>Create an Awesome New Campagne</h2>
-        <br>
-        <form class="site-form" action="{% url 'campagne:create' %}" method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            {% bootstrap_form form %}
-            {% buttons %}
-                <input type="submit" value="Create" class="btn btn-primary">
-            {% endbuttons %}
-        </form>
+    <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2>Create a new Campaign</h2>
+                </div>
+                <div class="col-12">
+                    <a href="{% url 'home' %}">Home</a>
+                    <a href="{% url 'campagne:campagne_list' %}">Service</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="contact">
+        <div class="container">
+            <div class="contact-form">
+                <form id="contact-form" class="site-form" action="{% url 'campagne:create' %}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {% bootstrap_form form %}
+                    {% buttons %}
+                        <input type="submit" value="Create">
+                    {% endbuttons %}
+                </form>
+            </div>
+        </div>
     </div>
     <script src="/static/slugify.js"></script>
+
 {% endblock %}
